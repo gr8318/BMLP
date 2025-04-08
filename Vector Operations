@@ -1,0 +1,12 @@
+import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+c = np.array([2, 3, 4])
+
+print("Vector Addition:\t", a + a)
+print("Vector Subtraction:\t", a - b)
+print("Element-wise Multiplication:", a * b)
+print("Element-wise Division:\t", np.array([4, 9, 16]) / c)
+print("Dot Product:\t\t", a.dot(b))
+print("Scalar Multiplication:\t", a * 2)
