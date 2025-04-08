@@ -1,17 +1,24 @@
+#linear tranformation
 import numpy as np
 import matplotlib.pyplot as plt
-
 x=np.arange(-10,10,1)
 y=np.arange(-10,10,1)
-
 xx,yy=np.meshgrid(x,y)
 T=np.array([[-1, 0],[0,-1]])
 xy=np.vstack([xx.flatten(),yy.flatten()])
 print(xy.shape)
-
 T@xy[:,0]
 trans=T@xy
-
 trans.shape
-print(xx)
-print(yy)
+xx_transformed=trans[0].reshape(xx.shape)
+yy_transformed=trans[1].reshape(yy.shape)
+f,axes =plt.subplots(1,2,figsize=(6,3))
+axes[0].scatter(xx,yy,s=10,c=xx+yy)
+axes[0].set_xlabel('XX');
+axes[0].set_ylabel('YY');
+axes[0].plot([-9,9],[0,0],linewidth=2,color ="lightgray")
+axes[0].plot([0,0],[9,-9],linewidth=2,color ="lightgray")
+axes[1].scatter(xx_transformed,yy_transformed,s=10,c=xx+yy)
+axes[1].set_xlabel('XX')
+axes[1].plot([-9,9],[0,0],linewidth=2,color ="lightgray")
+axes[1].plot([0,0],[9,-9],linewidth=2,color ="lightgray")
