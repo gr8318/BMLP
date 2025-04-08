@@ -1,17 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
 x=np.arange(-10,10,1)
 y=np.arange(-10,10,1)
-
 xx,yy=np.meshgrid(x,y)
 print(xx,yy)
 plt.scatter(xx,yy,s=20,c=xx+yy)
-
 plt.xlabel("XX")
 plt.ylabel("YY")
-
 plt.plot([-9,9],[0,0],linewidth=2,color="black")
 plt.plot([0,0],[9,-9],linewidth=2,color="black")
-
 plt.show()
