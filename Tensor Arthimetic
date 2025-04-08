@@ -1,0 +1,25 @@
+import numpy as np
+
+A = np.array([
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+    [[11, 12, 13], [14, 15, 16], [17, 18, 19]],
+    [[21, 22, 23], [24, 25, 26], [27, 28, 29]]
+])
+
+B = np.array([
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+    [[11, 12, 13], [14, 15, 16], [17, 18, 19]],
+    [[21, 22, 23], [24, 25, 26], [27, 28, 29]]
+])
+
+add = A + B                   # Addition
+subtract = A - B              # Subtraction
+hadamard = A * B              # Hadamard Product (element-wise multiplication)
+divide = A / B                # Division (element-wise)
+
+print("Tensor A:\n", A)
+print("\nTensor B:\n", B)
+print("\nAddition (A + B):\n", add)
+print("\nSubtraction (A - B):\n", subtract)
+print("\nHadamard Product (A * B):\n", hadamard)
+print("\nDivision (A / B):\n", divide)
