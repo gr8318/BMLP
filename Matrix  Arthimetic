@@ -1,0 +1,21 @@
+#MATRIX ADDITION
+import numpy as np
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[4, 5], [6, 7]])
+A1 = array([[1, 2], [3, 4], [5, 6]])
+B1 = array([0.5, 0.5])
+A2 = array([[1, 2], [3, 4], [5, 6]])
+B2 = 0.5
+
+print("A:\n", A)
+print("B:\n", B)
+print("A + B:\n", np.add(A, B))
+print("A - B:\n", np.subtract(A, B))
+print("A1 . B1:\n", A1.dot(B1))
+print("A2 * B2:\n", A2 * B2)
+
+x = np.arange(4).reshape(2, 2)
+print("x:\n", x)
+print("Transpose (np.transpose):\n", np.transpose(x))
+print("Transpose (x.T):\n", x.T)
