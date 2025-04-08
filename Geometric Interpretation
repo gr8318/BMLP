@@ -1,44 +1,17 @@
-#GEOMETRIC INTERPRETATION
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = y = np.arange(-10, 10)
-xx, yy = np.meshgrid(x, y)
+x=np.arange(-10,10,1)
+y=np.arange(-10,10,1)
 
-plt.scatter(xx, yy, c=xx+yy, s=20)
+xx,yy=np.meshgrid(x,y)
+print(xx,yy)
+plt.scatter(xx,yy,s=20,c=xx+yy)
+
 plt.xlabel("XX")
 plt.ylabel("YY")
-plt.xlim(-10, 10)
-plt.ylim(-10, 10)
-plt.axhline(0, color='black', linewidth=2)
-plt.axvline(0, color='black', linewidth=2)
-plt.show()
 
-T = np.array([[-1, 0], [0, -1]])
-xy = np.vstack([xx.flatten(), yy.flatten()])
-print(xy.shape)
+plt.plot([-9,9],[0,0],linewidth=2,color="black")
+plt.plot([0,0],[9,-9],linewidth=2,color="black")
 
-x = y = np.arange(-10, 10)
-xx, yy = np.meshgrid(x, y)
-xy = np.vstack([xx.flatten(), yy.flatten()])
-
-T = np.array([[-1, 0], [0, -1]])
-trans = T @ xy
-
-xx_t = trans[0].reshape(xx.shape)
-yy_t = trans[1].reshape(yy.shape)
-
-fig, axes = plt.subplots(1, 2, figsize=(6, 3))
-
-axes[0].scatter(xx, yy, c=xx+yy, s=10)
-axes[0].set_xlabel("XX"); axes[0].set_ylabel("YY")
-axes[0].axhline(0, color='lightgray')
-axes[0].axvline(0, color='lightgray')
-
-axes[1].scatter(xx_t, yy_t, c=xx+yy, s=10)
-axes[1].set_xlabel("XX")
-axes[1].axhline(0, color='lightgray')
-axes[1].axvline(0, color='lightgray')
-
-plt.tight_layout()
 plt.show()
