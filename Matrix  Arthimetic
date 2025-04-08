@@ -13,3 +13,4 @@ print("Scalar Multiplication:\n", C * 0.5)
 
 E = np.arange(4).reshape(2, 2)
 print("Transpose:\n", E.T)
+
