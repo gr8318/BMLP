@@ -1,0 +1,20 @@
+#DATA PREPROCESSING
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+
+data = sns.load_dataset("titanic").dropna()
+
+x = data[['sex', 'class', 'age', 'fare']]
+y = data['survived']
+
+ct = ColumnTransformer([("encoder", OneHotEncoder(), ['sex', 'class'])], remainder='passthrough')
+x = np.array(ct.fit_transform(x))
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
+
+print(x_train)
+print(x_test)
+print(y_test)
