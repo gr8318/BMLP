@@ -1,0 +1,51 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-2, 2, 100)
+y = 2 * x + 1
+
+print(x);print("-"*80);print(y)
+
+plt.plot(x, y)
+plt.axhline(0, c='k', lw=3)
+plt.axvline(0, c='k', lw=3)
+plt.xlim(-6, 6)
+plt.ylim(-6, 6)
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.show()
+
+X = np.linspace(-2, 2, 100)
+Y = 2 * X + 1
+Y1 = 2 * X + 3
+
+print(X)
+print("-" * 80)
+print(Y)
+print("-" * 80)
+print(Y1)
+
+X = np.linspace(-2, 2, 100)
+Y = 2 * X + 1
+Y1 = 2 * X + 3
+
+plt.figure()
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.xlim(-7, 7)
+plt.ylim(-7, 7)
+
+plt.plot([-6, 6], [0, 0], linewidth=2, color='black')
+plt.plot([0, 0], [-6, 6], linewidth=2, color='black')
+
+plt.plot(X, Y, label='Y = 2X + 1')
+plt.plot(X, Y1, label='Y = 2X + 3', color='orange')
+
+plt.title("Quadrant plot")
+plt.legend()
+plt.show()
+
+x = y = np.arange(-10, 10, 1)
+xx, yy = np.meshgrid(x, y)
+print(xx)
+print(yy)
